@@ -4,7 +4,7 @@
  * Author: wetah
  * Template: blocksy
  * Text Domain: ipt
- * Version: 0.10.5
+ * Version: 0.10.6
  */
 
 /* Special Tainacan item page layout for items which are in the group taxonomy */
@@ -159,4 +159,9 @@ h2.tainacan-single-item-section#metadata-section-default_section {
 }
 #header .wp-block-a11y-buttons-a11y-buttons button svg {
     height: 20px;
+}
+
+/* Barra do governo SP está acima dos filtros */
+#govsph-topbarGlobal {
+    z-index: 99999 !important;
 }
