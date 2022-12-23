@@ -34,7 +34,7 @@ add_shortcode( 'tainacan-total-items', function($attributes) {
     ), $attributes);
 
 	$group_taxonomy_id = $args['group_taxonomy_id'];//'279';//
-	$conjunto_term_id = 'conjunto_term_id';//'523';//'21';//
+	$conjunto_term_id = $args['conjunto_term_id'];//'523';//'21';//
 
 	$collections_post_types = \Tainacan\Repositories\Repository::get_collections_db_identifiers();
 
