@@ -12,7 +12,7 @@ if (! defined('WP_DEBUG')) {
 }
 
 /** Child Theme version */
-const IPT_VERSION = '0.10.6';
+const IPT_VERSION = '0.10.7';
 
 add_action( 'wp_enqueue_scripts', function () {
 	wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
@@ -24,10 +24,17 @@ add_filter('tainacan-get-metadata-section-as-html-before-name--index-0', functio
 	return str_replace('<input checked="checked"', '<input ', $before);
 }, 12, 2);
 
-add_shortcode( 'tainacan-total-items', function() {
+add_shortcode( 'tainacan-total-items', function($attributes) {
 
-	$group_taxonomy_id = '39939';//'279';//
-	$conjunto_term_id = '523';//'21';//
+	$args = shortcode_atts(array(
+        // default values
+        'group_taxonomy_id' => '39939',
+        'conjunto_term_id' => '113'
+
+    ), $attributes);
+
+	$group_taxonomy_id = $args['group_taxonomy_id'];//'279';//
+	$conjunto_term_id = 'conjunto_term_id';//'523';//'21';//
 
 	$collections_post_types = \Tainacan\Repositories\Repository::get_collections_db_identifiers();
 
