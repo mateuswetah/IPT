@@ -12,7 +12,7 @@ if (! defined('WP_DEBUG')) {
 }
 
 /** Child Theme version */
-const IPT_VERSION = '0.10.7';
+const IPT_VERSION = '0.10.8';
 
 add_action( 'wp_enqueue_scripts', function () {
 	wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
@@ -131,3 +131,13 @@ add_action('blocksy:header:before', function() {
 	</section>';
 });
 
+add_filter( 'map_meta_cap', 'tainacan_ipt_map_unfiltered_html', 99, 4 );
+function tainacan_ipt_map_unfiltered_html( $caps, $cap, $user_id, $args ) {
+	$user = get_userdata( $user_id );
+
+	if ( in_array( $user->roles[0], array('administrator', 'editor', 'author') ) && ( 'unfiltered_html' == $cap ) ) :
+		$caps = array( $cap );
+	endif;
+
+	return $caps;
+}
