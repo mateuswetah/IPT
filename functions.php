@@ -12,7 +12,7 @@ if (! defined('WP_DEBUG')) {
 }
 
 /** Child Theme version */
-const IPT_VERSION = '0.10.8';
+const IPT_VERSION = '0.10.11';
 
 add_action( 'wp_enqueue_scripts', function () {
 	wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
@@ -63,68 +63,51 @@ add_shortcode( 'tainacan-total-items', function($attributes) {
 });
 
 add_action('blocksy:header:before', function() {
-	echo '<section class="govsph-topo"> 
-
-		<link rel="stylesheet" type="text/css" href="https://saopaulo.sp.gov.br/barra-govsp/css/cabecalho-secretarias.css">
-		<link rel="stylesheet" type="text/css" href="https://saopaulo.sp.gov.br/barra-govsp/css/contraste.css">
-			
-		<div id="govsph-topbarGlobal" class="blu-e">
-				
+	echo '><section class="govsp-topo">
+	<link rel="stylesheet" type="text/css" href="https://saopaulo.sp.gov.br/barra-govsp/css/topo-basico-sp.min.css">
+	<link rel="stylesheet" type="text/css" href="https://saopaulo.sp.gov.br/barra-govsp/css/contraste.css">
+		<div id="govsp-topbarGlobal" class="blu-e">
 				<div id="topbarGlobal">
-						<ul class="govsph-links-governo">              
-								<li class="govsph-link-portal"><a class="govsph-links-governo" href="http://www.saopaulo.sp.gov.br" target="_blank">saopaulo.sp.gov.br</a></li>
-								<li><a class="govsph-links-governo" href="http://www.cidadao.sp.gov.br" target="_blank">Cidadão SP</a></li>
-							</ul>
-						<div id="govsph-redes-sociais">
-								
-								<ul class="govsph-links-redes-sociais">              
-										<li><a class="govsph-social" href="https://www.facebook.com/governosp/" target="_blank"><img class="govsph-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/facebook.png" alt="Facebook Governo de São Paulo"></a></li>
-										<li><a class="govsph-social" href="https://www.twitter.com/governosp/" target="_blank"><img class="govsph-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/twitter.png" alt="Facebook Governo de São Paulo"></a></li>
-										<li><a class="govsph-social" href="https://www.instagram.com/governosp/" target="_blank"><img class="govsph-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/insta.png" alt="Facebook Governo de São Paulo"></a></li>
-										<li><a class="govsph-social" href="https://www.flickr.com/governosp/" target="_blank"><img class="govsph-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/flickr.png" alt="Facebook Governo de São Paulo"></a></li>
-										<li><a class="govsph-social" href="https://www.youtube.com/governosp/" target="_blank"><img class="govsph-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/youtube.png" alt="Facebook Governo de São Paulo"></a></li>
-										<li><a class="govsph-social" href="https://www.issuu.com/governosp/" target="_blank"><img class="govsph-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/issuu.png" alt="Facebook Governo de São Paulo"></a></li>
-										<li><a class="govsph-social" href="https://www.linkedin.com/company/governosp/" target="_blank"><img class="govsph-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/linkedin.png" alt="Facebook Governo de São Paulo"></a></li>
-										<li><p class="govsph-social">/governosp</p></li>
-										<a class="govsp-acessibilidade" href="javascript:mudaTamanho(`body`, 1);"><img class="govsp-acessibilidade" src="https://saopaulo.sp.gov.br/barra-govsp/img/big-font.png" alt="Aumentar Fonte"></a>
-										<a class="govsp-acessibilidade" href="javascript:mudaTamanho(`body`, -1);"><img class="govsp-acessibilidade" src="https://saopaulo.sp.gov.br/barra-govsp/img/small-font.png" alt="Diminuir Fonte"></a>
-										<a class="govsp-acessibilidade" href="#" id="altocontraste" accesskey="3" onclick="window.toggleContrast()" onkeydown="window.toggleContrast()"><img class="govsp-acessibilidade" src="https://saopaulo.sp.gov.br/barra-govsp/img/contrast.png" alt="Contraste"></a>
-										<a class="govsp-acessibilidade" href="https://www.saopaulo.sp.gov.br/fale-conosco/comunicar-erros/" title="Comunicar Erros" target="_blank"><img class="govsp-acessibilidade" src="https://saopaulo.sp.gov.br/barra-govsp/img/error-report.png"></a>
-									</ul>
-							</div>
-									
-				<div id="topbarLink" class="govsph-blue">
-					
-					<div class="govsph-portal">
-						<!-- Insira na Tag abaixo o Nome da Secretaria-->
-						<p class="govsph-pasta">Desenvolvimento Econômico</p>
-						
-					</div> 
+					<div id="topbarLink" class="govsp-black">
+					<div class="govsp-portal">
+						<a href="https://www.saopaulo.sp.gov.br/">saopaulo.sp.gov.br</a>
+					</div>
 				</div>
-				<div class="govsph-logo"></div> 
+				<nav class="govsp-navbar govsp-navbar-expand-lg">
+						<a class="govsp-link" href="http://www.cidadao.sp.gov.br" target="_blank">Cidadão SP</a>
+						<a class="govsp-social" href="https://www.facebook.com/governosp/" target="_blank"><img class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/facebook.png" alt="Facebook Governo de SÃ£o Paulo"></a>
+						<a class="govsp-social" href="https://www.twitter.com/governosp/" target="_blank"><img class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/twitter.png" alt="Twitter Governo de SÃ£o Paulo"></a>
+						<a class="govsp-social" href="https://www.instagram.com/governosp/" target="_blank"><img class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/insta.png" alt="Instagram Governo de SÃ£o Paulo"></a>
+						<a class="govsp-social" href="https://www.flickr.com/governosp/" target="_blank"><img class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/flickr.png" alt="Flickr Governo de SÃ£o Paulo"></a>
+						<a class="govsp-social" href="https://www.youtube.com/governosp/" target="_blank"><img class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/youtube.png" alt="Youtube Governo de SÃ£o Paulo"></a>
+						<a class="govsp-social" href="https://www.issuu.com/governosp/" target="_blank"><img class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/issuu.png" alt="Issuu Governo de SÃ£o Paulo"></a>
+						<a class="govsp-social" href="https://www.linkedin.com/company/governosp/" target="_blank"><img class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/linkedin.png" alt="Linkedin Governo de SÃ£o Paulo"></a>
+						<p class="govsp-social">/governosp</p>
+						<a class="govsp-acessibilidade" href="javascript:mudaTamanho(`body`, 1);"><img class="govsp-acessibilidade" src="https://saopaulo.sp.gov.br/barra-govsp/img/big-font.png" alt="Aumentar Fonte"></a>
+						<a class="govsp-acessibilidade" href="javascript:mudaTamanho(`body`, -1);"><img class="govsp-acessibilidade" src="https://saopaulo.sp.gov.br/barra-govsp/img/small-font.png" alt="Diminuir Fonte"></a>
+						<a class="govsp-acessibilidade" href="#" id="altocontraste" accesskey="3" onclick="window.toggleContrast()" onkeydown="window.toggleContrast()"><img class="govsp-acessibilidade" src="https://saopaulo.sp.gov.br/barra-govsp/img/contrast.png" alt="Contraste"></a>
+						<a class="govsp-acessibilidade" href="https://www.saopaulo.sp.gov.br/fale-conosco/comunicar-erros/" title="Comunicar Erros" target="_blank"><img class="govsp-acessibilidade" src="https://saopaulo.sp.gov.br/barra-govsp/img/error-report.png"></a>
+				</nav>
 			</div>
-			<div class="govsph-kebab">
+			<div class="govsp-kebab">
 					<figure></figure>
-					<figure class="govsph-middle"></figure>
-					<p class="govsph-cross"></p>
+					<figure class="govsp-middle"></figure>
+					<p class="govsp-cross"></p>
 					<figure></figure>
-					<ul class="govsph-dropdown" id="govsp-kebab">
-						<ul class="govsph-links-esq">
-						<li class="govsph-link-portal"><a class="govsph-links-governo" href="http://www.saopaulo.sp.gov.br" target="_blank">saopaulo.sp.gov.br</a></li>
-						<li><a class="govsph-links-governo" href="http://www.cidadao.sp.gov.br" target="_blank">Cidadão SP</a></li>
-						</ul>              
-						<li><a class="govsph-social" href="https://www.facebook.com/governosp/" target="_blank"><img class="govsph-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/facebook.png" alt="Facebook Governo de São Paulo"></a></li>
-						<li><a class="govsph-social" href="https://www.twitter.com/governosp/" target="_blank"><img class="govsph-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/twitter.png" alt="Facebook Governo de São Paulo"></a></li>
-						<li><a class="govsph-social" href="https://www.instagram.com/governosp/" target="_blank"><img class="govsph-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/insta.png" alt="Facebook Governo de São Paulo"></a></li>
-						<li><a class="govsph-social" href="https://www.flickr.com/governosp/" target="_blank"><img class="govsph-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/flickr.png" alt="Facebook Governo de São Paulo"></a></li>
-						<li><a class="govsph-social" href="https://www.youtube.com/governosp/" target="_blank"><img class="govsph-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/youtube.png" alt="Facebook Governo de São Paulo"></a></li>
-						<li><a class="govsph-social" href="https://www.issuu.com/governosp/" target="_blank"><img class="govsph-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/issuu.png" alt="Facebook Governo de São Paulo"></a></li>
-						<li><a class="govsph-social" href="https://www.linkedin.com/company/governosp/" target="_blank"><img class="govsph-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/linkedin.png" alt="Facebook Governo de São Paulo"></a></li>
-						<li><p class="govsph-social">/governosp</p></li>
-					</ul> 
+					<ul class="govsp-dropdown" id="govsp-kebab">
+						<li><a class="govsp-link" href="http://www.cidadao.sp.gov.br" target="_blank">Cidadão SP</a>
+						</li><li><a class="govsp-social" href="https://www.facebook.com/governosp/" target="_blank"><img class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/facebook.png" alt="Facebook Governo de SÃ£o Paulo"></a></li>
+						<li><a class="govsp-social" href="https://www.twitter.com/governosp/" target="_blank"><img class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/twitter.png" alt="Twitter Governo de SÃ£o Paulo"></a></li>
+						<li><a class="govsp-social" href="https://www.instagram.com/governosp/" target="_blank"><img class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/insta.png" alt="Instagram Governo de SÃ£o Paulo"></a></li>
+						<li><a class="govsp-social" href="https://www.flickr.com/governosp/" target="_blank"><img class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/flickr.png" alt="Flickr Governo de SÃ£o Paulo"></a></li>
+						<li><a class="govsp-social" href="https://www.youtube.com/governosp/" target="_blank"><img class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/youtube.png" alt="Youtube Governo de SÃ£o Paulo"></a></li>
+						<li><a class="govsp-social" href="https://www.issuu.com/governosp/" target="_blank"><img class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/issuu.png" alt="Issuu Governo de SÃ£o Paulo"></a></li>
+						<li><a class="govsp-social" href="https://www.linkedin.com/company/governosp/" target="_blank"><img class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/linkedin.png" alt="Linkedin Governo de SÃ£o Paulo"></a></li>
+						<li></li><p class="govsp-social">/governosp</p>
+					</ul>
 			</div>
 		</div>
-		<script src="https://saopaulo.sp.gov.br/barra-govsp/js/script-cabecalho.js"></script>
+		<script src="https://saopaulo.sp.gov.br/barra-govsp/js/script-topo.js"></script>
 		<script src="https://saopaulo.sp.gov.br/barra-govsp/js/script-contrast.js"></script>
 		<script src="https://saopaulo.sp.gov.br/barra-govsp/js/script-tamanho-fonte.js"></script>
 		<script src="https://saopaulo.sp.gov.br/barra-govsp/js/script-scroll.js"></script>
